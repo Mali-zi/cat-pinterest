@@ -5,17 +5,15 @@ import './Header.css';
 export default function Header() {
   return (
     <Container className="header">
-      <Navbar expand="lg" data-bs-theme="dark" className="p-0 bg-transparent">
-        <Container>
-          <Nav className="me-auto">
-            <Nav.Link as={NavLink} className="menu-item" to="/">
-              Все котики
-            </Nav.Link>
-            <Nav.Link as={NavLink} className="menu-item" to="/favourites">
-              Любимые котики
-            </Nav.Link>
-          </Nav>
-        </Container>
+      <Navbar expand="lg" data-bs-theme="dark" className="p-0 ps-4 bg-transparent">
+        <Nav>
+          <Nav.Link as={NavLink} className="menu-item" to="/">
+            Все котики
+          </Nav.Link>
+          <Nav.Link as={NavLink} className="menu-item" to="/favourites">
+            Любимые котики
+          </Nav.Link>
+        </Nav>
       </Navbar>
     </Container>
   );
