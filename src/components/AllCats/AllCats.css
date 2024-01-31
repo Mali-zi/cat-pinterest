@@ -1,0 +1,48 @@
+.bg-image {
+  height: 100%;
+}
+
+.parent-col {
+  position: relative;
+}
+
+.parent-col:hover {
+  scale: 1.05;
+}
+
+.parent-col:hover .favorite-btn {
+  visibility: visible;
+}
+
+.parent {
+  display: block;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  object-fit: cover;
+}
+
+.parent:hover {
+  box-shadow: 0px 6px 10px 0px #464646
+}
+
+.favorite-btn {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.5rem;
+  border: none;
+  background-color: transparent;
+  visibility: hidden;
+}
+
+.else-btn {
+  margin-top: 2rem;
+  color: black;
+  font-weight: bold;
+  border: none;
+  background-color: transparent;
+}
+
+.else-btn:hover {
+  color: #2196F3;
+  scale: 1.05;
+}
