@@ -8,7 +8,7 @@
 - на вкладке "любимые котики" отображаются добавленные в "любимые" котики
 - реализована адаптивность
 
-Стек: React.JS + TypeScript + Vite + Redux Toolkit + Bootstrap CSS
-Code Quality Tools: ESLint + Prettier
-Deploy
-![Screenshot](https://github.com/Mali-zi/gridnine/blob/master/public/screenshot.JPG)
+- Стек: React.JS + TypeScript + Vite + Redux Toolkit + Bootstrap CSS
+- Code Quality Tools: ESLint + Prettier
+- [Deploy](https://mali-zi-cat-pinterest.netlify.app)
+- ![Screenshot](https://github.com/Mali-zi/cat-pinterest/blob/master/public/screenshot.JPG)
