@@ -5,7 +5,7 @@ import './Header.css';
 export default function Header() {
   return (
     <Container className="header">
-      <Navbar expand="lg" data-bs-theme="dark" className="p-0 ps-4 bg-transparent">
+      <Navbar data-bs-theme="dark" className="p-0 ps-4 bg-transparent">
         <Nav>
           <Nav.Link as={NavLink} className="menu-item" to="/">
             Все котики
