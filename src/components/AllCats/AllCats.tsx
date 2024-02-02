@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Col, Row, Container } from 'react-bootstrap';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import { fetchCats } from '../../store/catSlice';
@@ -28,11 +28,39 @@ export default function AllCats() {
   );
 
   const [isMouseOver, setMouseOver] = useState(false);
+  const elementRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (cats.length === 0) {
+  const scrollHandler = (): void => {
+    const scrollHeight = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight,
+      document.body.clientHeight,
+      document.documentElement.clientHeight
+    );
+
+    if (
+      document.documentElement.scrollTop +
+        document.documentElement.clientHeight >
+        scrollHeight - 10 &&
+      status !== 'pending'
+    ) {
       dispatch(fetchCats(url));
     }
+  };
+
+  useEffect(() => {
+    if (elementRef && elementRef.current && elementRef.current.offsetTop + window.scrollY < document.documentElement.clientHeight) {
+      dispatch(fetchCats(url));
+    }
+  }, [status]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', scrollHandler);
+    return () => {
+      window.removeEventListener('scroll', scrollHandler);
+    };
   }, []);
 
   const handleClick = (cat: ICat) => {
@@ -79,13 +107,7 @@ export default function AllCats() {
         {status === 'pending' ? (
           <LoadingSpinner />
         ) : (
-          <button
-            type="button"
-            className="else-btn"
-            onClick={() => dispatch(fetchCats(url))}
-          >
-            ... загружаем еще котиков ...
-          </button>
+          <div ref={elementRef} />
         )}
       </Row>
     </Container>

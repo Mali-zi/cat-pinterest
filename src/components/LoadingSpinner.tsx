@@ -6,7 +6,7 @@ export default function LoadingSpinner() {
       <Spinner animation="grow" size="sm" variant="primary" className="me-2" />
       <Spinner animation="grow" size="sm" variant="primary" className="me-2" />
       <Spinner animation="grow" size="sm" variant="primary" />
-      <span className="h4 ps-3 primary">Loading...</span>
+      <span className="h4 ps-3 primary">Загружаем еще котиков...</span>
     </div>
   )
 }
